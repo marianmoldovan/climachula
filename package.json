@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "core-js": "^3.6.5",
+    "inspector": "^0.5.0",
     "vue": "^3.0.0"
   },
   "devDependencies": {
@@ -38,5 +39,8 @@
     "> 1%",
     "last 2 versions",
     "not dead"
-  ]
+  ],
+  "vueCompilerOptions": {
+    "experimentalShamefullySupportOptionsApi": true
+  }
 }
