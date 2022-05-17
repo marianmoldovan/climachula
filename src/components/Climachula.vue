@@ -1,5 +1,6 @@
 <template>
   <div class="container">
+    <img :src="climeImage" alt="image of weather now" />
     <div class="flex">
       <p>{{ dayOfWeek }}</p>
       <p>{{ dateOfToday }}</p>
@@ -32,19 +33,27 @@ const MONTHS = [
   "Noviembre",
   "Diciembre",
 ];
-
 const RAIN = [
   1276, 1273, 1246, 1243, 1240, 1201, 1198, 1195, 1192, 1187, 1186, 1183, 1180,
   1153,
 ];
 const CLOUDS = [1003, 1006, 1009, 1030];
 
+const CLIME_IMGS = {
+  sunny:
+    "https://res.cloudinary.com/dleqykpqi/image/upload/v1652779218/favicon.ico_n03ymn.jpg",
+  cloudy:
+    "https://res.cloudinary.com/dleqykpqi/image/upload/v1652779219/nubes_dwatkb.jpg",
+  rainy:
+    "https://res.cloudinary.com/dleqykpqi/image/upload/v1652779219/nubes_dwatkb.jpg",
+};
+
 export default {
   name: "HelloWorld",
   data() {
     return {
       temperature: 0,
-      code: 0,
+      climeImage: this.climeImage,
     };
   },
   mounted() {
@@ -65,11 +74,11 @@ export default {
           const code = data.current.condition.code;
 
           if (CLOUDS.includes(code)) {
-            console.log("CLOUDY");
+            this.climeImage = CLIME_IMGS.cloudy;
           } else if (RAIN.includes(code)) {
-            console.log("RAINY");
+            this.climeImage = CLIME_IMGS.rainy;
           } else {
-            console.log("SUNNY");
+            this.climeImage = CLIME_IMGS.sunny;
           }
         });
     },
@@ -99,9 +108,9 @@ export default {
   width: 300px;
   height: 300px;
   margin: auto;
-  background-image: url(../assets/img.jpg);
+  /*   background-image: url(../assets/img.jpg);
   background-size: contain;
-  background-repeat: no-repeat;
+  background-repeat: no-repeat; */
   box-shadow: 5px 5px 15px 3px rgba(128, 128, 128, 0.797);
 }
 
@@ -113,6 +122,12 @@ p {
 .flex {
   height: 40%;
   width: 100%;
+  position: absolute;
+  top: 45px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
 }
 .down {
   margin-top: 40px;
