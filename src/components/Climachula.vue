@@ -103,7 +103,7 @@ export default {
   flex-direction: column;
   justify-content: flex-end;
   font-family: "Chulapa";
-  font-size: 2.5rem;
+  font-size: 2.7rem;
   font-weight: 600;
   width: 450px;
   height: 450px;
@@ -123,7 +123,7 @@ p {
   height: 30%;
   width: 100%;
   position: absolute;
-  top: 288px;
+  top: 286px;
   left: 0;
   right: 0;
   bottom: 0;
