@@ -41,11 +41,11 @@ const CLOUDS = [1003, 1006, 1009, 1030];
 
 const CLIME_IMGS = {
   sunny:
-    "https://res.cloudinary.com/dleqykpqi/image/upload/v1652779218/favicon.ico_n03ymn.jpg",
+    "https://res.cloudinary.com/dleqykpqi/image/upload/v1652863341/sunny_ljfro9.jpg",
   cloudy:
-    "https://res.cloudinary.com/dleqykpqi/image/upload/v1652779219/nubes_dwatkb.jpg",
+    "https://res.cloudinary.com/dleqykpqi/image/upload/v1652863346/cloudy_qhxtno.jpg",
   rainy:
-    "https://res.cloudinary.com/dleqykpqi/image/upload/v1652779219/nubes_dwatkb.jpg",
+    "https://res.cloudinary.com/dleqykpqi/image/upload/v1652863336/rainy_udv6f8.jpg",
 };
 
 export default {
@@ -107,10 +107,11 @@ export default {
   font-weight: 600;
   width: 450px;
   height: 450px;
-  margin: auto;
+  margin: 20px auto;
   /*   background-image: url(../assets/img.jpg);
   background-size: contain;
   background-repeat: no-repeat; */
+  border: 1px solid rgba(128, 128, 128, 0.797);
   box-shadow: 5px 5px 15px 3px rgba(128, 128, 128, 0.797);
 }
 
@@ -119,10 +120,10 @@ p {
   text-align: center;
 }
 .flex {
-  height: 40%;
+  height: 30%;
   width: 100%;
   position: absolute;
-  top: 230px;
+  top: 288px;
   left: 0;
   right: 0;
   bottom: 0;
