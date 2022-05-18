@@ -122,7 +122,7 @@ p {
   height: 40%;
   width: 100%;
   position: absolute;
-  top: 250px;
+  top: 230px;
   left: 0;
   right: 0;
   bottom: 0;
