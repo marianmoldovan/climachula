@@ -106,6 +106,15 @@ p {
 }
 
 /* Media queries */
+@media (max-width: 479px) {
+  .flex {
+    top: 80px;
+  }
+  .container {
+    width: 380px;
+    font-size: 34px;
+  }
+}
 @media (min-width: 600px) {
   .flex {
     top: 245px;
