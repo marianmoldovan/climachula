@@ -104,4 +104,41 @@ p {
 .down {
   margin-top: 40px;
 }
+
+/* Media queries */
+@media (min-width: 600px) {
+  .flex {
+    top: 245px;
+  }
+}
+@media (min-width: 768px) {
+  .flex {
+    top: 130px;
+  }
+}
+@media (min-width: 900px) {
+  .flex {
+    top: 178px;
+  }
+}
+@media (min-width: 1024px) {
+  .flex {
+    top: 118px;
+  }
+}
+@media (min-width: 1100px) {
+  .flex {
+    top: 230px;
+  }
+}
+@media (min-width: 1450px) {
+  .flex {
+    bottom: 100px;
+  }
+}
+@media (min-width: 1700px) {
+  .flex {
+    bottom: 100px;
+  }
+}
 </style>
