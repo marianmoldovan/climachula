@@ -33,54 +33,26 @@ const MONTHS = [
   "Noviembre",
   "Diciembre",
 ];
-const RAIN = [
-  1276, 1273, 1246, 1243, 1240, 1201, 1198, 1195, 1192, 1187, 1186, 1183, 1180,
-  1153,
-];
-const CLOUDS = [1003, 1006, 1009, 1030];
-
-const CLIME_IMGS = {
-  sunny:
-    "https://res.cloudinary.com/dleqykpqi/image/upload/v1652863341/sunny_ljfro9.jpg",
-  cloudy:
-    "https://res.cloudinary.com/dleqykpqi/image/upload/v1652863346/cloudy_qhxtno.jpg",
-  rainy:
-    "https://res.cloudinary.com/dleqykpqi/image/upload/v1652863336/rainy_udv6f8.jpg",
-};
+import { WeatherController } from "../assets/utils/weather";
+const weatherController = new WeatherController();
 
 export default {
-  name: "HelloWorld",
+  name: "Climachula",
   data() {
     return {
       temperature: 0,
       climeImage: this.climeImage,
     };
   },
-  mounted() {
-    this.getWeather();
-    setInterval(this.getWeather, 3600000);
+  async mounted() {
+    await this.renderClimeConditions();
+    setInterval(this.renderClimeConditions, 3600000);
   },
   methods: {
-    getWeather() {
-      fetch(
-        "https://api.weatherapi.com/v1/current.json?key=618e9ba4df8c4682af4132516220703&q=Madrid&aqi=no"
-      )
-        .then((response) => response.json())
-        .then((data) => {
-          const temperature = Math.round(data.current.feelslike_c);
-          this.temperature = temperature;
-          console.log(data);
-
-          const code = data.current.condition.code;
-
-          if (CLOUDS.includes(code)) {
-            this.climeImage = CLIME_IMGS.cloudy;
-          } else if (RAIN.includes(code)) {
-            this.climeImage = CLIME_IMGS.rainy;
-          } else {
-            this.climeImage = CLIME_IMGS.sunny;
-          }
-        });
+    async renderClimeConditions() {
+      await weatherController.retrieveData();
+      this.temperature = weatherController.temperature;
+      this.climeImage = weatherController.getConditionImage();
     },
   },
   computed: {
