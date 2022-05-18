@@ -2,7 +2,7 @@
   <div class="container">
     <img :src="climeImage" alt="image of weather now" />
     <div class="flex">
-      <p>{{ dayOfWeek }}</p>
+      <p>{{ dayOfWeek }},</p>
       <p>{{ dateOfToday }}</p>
       <p>{{ temperature }}º</p>
     </div>
@@ -103,10 +103,10 @@ export default {
   flex-direction: column;
   justify-content: flex-end;
   font-family: "Chulapa";
-  font-size: 24px;
+  font-size: 2.5rem;
   font-weight: 600;
-  width: 300px;
-  height: 300px;
+  width: 450px;
+  height: 450px;
   margin: auto;
   /*   background-image: url(../assets/img.jpg);
   background-size: contain;
@@ -117,13 +117,12 @@ export default {
 p {
   margin: 2px auto;
   text-align: center;
-  font-size: 30px;
 }
 .flex {
   height: 40%;
   width: 100%;
   position: absolute;
-  top: 45px;
+  top: 44%;
   left: 0;
   right: 0;
   bottom: 0;
