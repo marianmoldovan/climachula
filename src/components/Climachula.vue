@@ -73,18 +73,16 @@ export default {
 .container {
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
+  justify-content: flex-start;
   font-family: "Chulapa";
   font-size: 2.7rem;
   font-weight: 600;
   width: 450px;
   height: 450px;
   margin: 20px auto;
-  /*   background-image: url(../assets/img.jpg);
-  background-size: contain;
-  background-repeat: no-repeat; */
   border: 1px solid rgba(128, 128, 128, 0.797);
   box-shadow: 5px 5px 15px 3px rgba(128, 128, 128, 0.797);
+  position: relative;
 }
 
 p {
@@ -92,10 +90,8 @@ p {
   text-align: center;
 }
 .flex {
-  height: 30%;
-  width: 100%;
+  height: 35.9%;
   position: absolute;
-  top: 286px;
   left: 0;
   right: 0;
   bottom: 0;
@@ -103,51 +99,5 @@ p {
 }
 .down {
   margin-top: 40px;
-}
-
-/* Media queries */
-@media (max-width: 479px) {
-  .flex {
-    top: 80px;
-  }
-  .container {
-    width: 380px;
-    font-size: 34px;
-  }
-}
-@media (min-width: 600px) {
-  .flex {
-    top: 245px;
-  }
-}
-@media (min-width: 768px) {
-  .flex {
-    top: 130px;
-  }
-}
-@media (min-width: 900px) {
-  .flex {
-    top: 178px;
-  }
-}
-@media (min-width: 1024px) {
-  .flex {
-    top: 118px;
-  }
-}
-@media (min-width: 1100px) {
-  .flex {
-    top: 230px;
-  }
-}
-@media (min-width: 1450px) {
-  .flex {
-    bottom: 100px;
-  }
-}
-@media (min-width: 1700px) {
-  .flex {
-    bottom: 100px;
-  }
 }
 </style>
